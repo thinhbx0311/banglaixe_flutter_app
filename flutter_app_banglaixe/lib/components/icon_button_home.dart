@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'file:///C:/Users/msi/Desktop/BangLaiXe/flutter_app_banglaixe/lib/views/tips%20_page.dart';
 
 class IconButtonHome extends StatelessWidget {
+  final Widget page_name;
   final Icon icon_name;
   final Color color;
   final String button_name;
+ // final String screen_name;
 
-  const IconButtonHome({Key key, this.icon_name, this.color, this.button_name})
+  const IconButtonHome({Key key, this.icon_name, this.color, this.button_name, this.page_name})
       : super(key: key);
 
   @override
@@ -24,7 +27,9 @@ class IconButtonHome extends StatelessWidget {
 
                 child: SizedBox(width: 56, height: 56, child: this.icon_name),
 
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push( MaterialPageRoute(builder: (context) => this.page_name));
+                },
               ),
             ),
           ),
